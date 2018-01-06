@@ -3,17 +3,14 @@ package julesssss.github.bitcoinmaterial
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
-import io.reactivex.schedulers.Schedulers
-import julesssss.github.bitcoinmaterial.api.ServiceProvider.coinbaseService
+import julesssss.github.bitcoinmaterial.data.CurrencyResponse
 import julesssss.github.bitcoinmaterial.data.PriceResponse
 import kotlinx.android.synthetic.main.activity_main.*
-import uk.co.ostmodern.util.SchedulerProvider
 
 class MainActivity : AppCompatActivity() {
 
-    private val scheduleProvider by lazy { SchedulerProvider(Schedulers.io(), AndroidSchedulers.mainThread()) }
+    private val viewModel: HomeViewModel = HomeViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,21 +21,33 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupView() {
         buttonBuyPrice.setOnClickListener {
-            coinbaseService.getBuyPrice()
-                    .compose(scheduleProvider.getSchedulersForSingle())
+            viewModel.getBuyPrice()
                     .subscribeBy(
                             onSuccess = this::handlePriceResponse,
                             onError = this::handleError
                     )
         }
         buttonSellPrice.setOnClickListener {
-            coinbaseService.getSellPrice()
-                    .compose(scheduleProvider.getSchedulersForSingle())
+            viewModel.getSellPrice()
                     .subscribeBy(
                             onSuccess = this::handlePriceResponse,
                             onError = this::handleError
                     )
         }
+        buttonSpotPrice.setOnClickListener {
+            viewModel.getSpotPrice()
+                    .subscribeBy(
+                            onSuccess = this::handlePriceResponse,
+                            onError = this::handleError
+                    )
+        }
+        buttonD.setOnClickListener {
+            
+        }
+    }
+
+    private fun handleExchangeResponse(currencies: CurrencyResponse) {
+        Toast.makeText(this, "Currencies: ${currencies.currency.rates}", Toast.LENGTH_SHORT).show()
     }
 
     private fun handlePriceResponse(buyPrice: PriceResponse) {

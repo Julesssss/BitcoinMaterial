@@ -7,27 +7,17 @@
     android:padding="16dp"
     tools:context="julesssss.github.bitcoinmaterial.MainActivity">
 
-    <TextView
-        android:id="@+id/textTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Hello Bitcoin!"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_default="wrap" />
-
     <Button
         android:id="@+id/buttonBuyPrice"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="16dp"
         android:text="Get buy price"
         app:layout_constraintEnd_toStartOf="@+id/buttonSellPrice"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textTitle" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonSellPrice"
@@ -40,12 +30,12 @@
         app:layout_constraintTop_toTopOf="@id/buttonBuyPrice" />
 
     <Button
-        android:id="@+id/buttonGetExchangePrice"
+        android:id="@+id/buttonSpotPrice"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="16dp"
-        android:text="Exchange rate"
+        android:text="Get spot price"
         app:layout_constraintEnd_toStartOf="@+id/buttonD"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonBuyPrice" />
@@ -56,9 +46,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text=""
-        app:layout_constraintBottom_toBottomOf="@+id/buttonGetExchangePrice"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonSpotPrice"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/buttonGetExchangePrice"
-        app:layout_constraintTop_toTopOf="@id/buttonGetExchangePrice" />
+        app:layout_constraintStart_toEndOf="@id/buttonSpotPrice"
+        app:layout_constraintTop_toTopOf="@id/buttonSpotPrice" />
 
 </android.support.constraint.ConstraintLayout>

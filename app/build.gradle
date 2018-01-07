@@ -45,4 +45,7 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroidVersion"
     implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxJavaVersion"
 
+    // Chart Library
+    compile 'com.diogobernardino:williamchart:2.5.0'
+
 }

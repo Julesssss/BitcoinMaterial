@@ -4,7 +4,7 @@ import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import julesssss.github.bitcoinmaterial.api.ServiceProvider.coinbaseService
-import julesssss.github.bitcoinmaterial.data.CurrencyResponse
+import julesssss.github.bitcoinmaterial.data.CurrenciesResponse
 import julesssss.github.bitcoinmaterial.data.PriceResponse
 import uk.co.ostmodern.util.SchedulerProvider
 
@@ -23,7 +23,7 @@ class HomeViewModel {
     fun getSpotPrice(): Single<PriceResponse> = coinbaseService.getSpotPrice(currencyPair)
             .compose(scheduleProvider.getSchedulersForSingle())
 
-    fun getCurrencies(): Single<CurrencyResponse> = coinbaseService.getCurrencies()
+    fun getCurrencies(): Single<CurrenciesResponse> = coinbaseService.getCurrencies()
             .compose(scheduleProvider.getSchedulersForSingle())
 
 }

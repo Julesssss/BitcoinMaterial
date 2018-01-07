@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import io.reactivex.rxkotlin.subscribeBy
-import julesssss.github.bitcoinmaterial.data.CurrencyResponse
+import julesssss.github.bitcoinmaterial.data.CurrenciesResponse
 import julesssss.github.bitcoinmaterial.data.PriceResponse
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -42,12 +42,16 @@ class MainActivity : AppCompatActivity() {
                     )
         }
         buttonD.setOnClickListener {
-            
+            viewModel.getCurrencies()
+                    .subscribeBy(
+                            onSuccess = ::handleExchangeResponse,
+                            onError = ::handleError
+                    )
         }
     }
 
-    private fun handleExchangeResponse(currencies: CurrencyResponse) {
-        Toast.makeText(this, "Currencies: ${currencies.currency.rates}", Toast.LENGTH_SHORT).show()
+    private fun handleExchangeResponse(currencies: CurrenciesResponse) {
+        Toast.makeText(this, "Currencies: ${currencies.data.map { "\n${it.id}" }}", Toast.LENGTH_SHORT).show()
     }
 
     private fun handlePriceResponse(buyPrice: PriceResponse) {

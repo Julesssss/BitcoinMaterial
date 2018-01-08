@@ -45,10 +45,24 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text=""
+        android:text="Get Currencies"
         app:layout_constraintBottom_toBottomOf="@+id/buttonSpotPrice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/buttonSpotPrice"
         app:layout_constraintTop_toTopOf="@id/buttonSpotPrice" />
+
+    <Button
+        android:id="@+id/buttonE"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Price Activity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonSpotPrice" />
+
 
 </android.support.constraint.ConstraintLayout>

@@ -1,5 +1,6 @@
 package julesssss.github.bitcoinmaterial
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
@@ -47,6 +48,9 @@ class MainActivity : AppCompatActivity() {
                             onSuccess = ::handleExchangeResponse,
                             onError = ::handleError
                     )
+        }
+        buttonE.setOnClickListener {
+            startActivity(Intent(this, PriceActivity::class.java))
         }
     }
 

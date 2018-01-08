@@ -1,4 +1,4 @@
-package julesssss.github.bitcoinmaterial
+package julesssss.github.bitcoinmaterial.ui.Price
 
 import android.graphics.Color
 import android.graphics.Paint

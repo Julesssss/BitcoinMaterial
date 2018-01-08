@@ -1,10 +1,11 @@
-package julesssss.github.bitcoinmaterial
+package julesssss.github.bitcoinmaterial.ui.Price
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
 import io.reactivex.rxkotlin.subscribeBy
+import julesssss.github.bitcoinmaterial.R
 import kotlinx.android.synthetic.main.activity_price.*
 
 class PriceActivity : AppCompatActivity() {

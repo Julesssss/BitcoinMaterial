@@ -1,4 +1,4 @@
-package julesssss.github.bitcoinmaterial
+package julesssss.github.bitcoinmaterial.ui.home
 
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers

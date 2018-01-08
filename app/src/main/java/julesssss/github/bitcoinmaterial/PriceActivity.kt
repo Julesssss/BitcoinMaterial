@@ -30,6 +30,7 @@ class PriceActivity : AppCompatActivity() {
                         onError = ::handleError
                 )
 
+        viewModel.setupGraph(chart)
     }
 
     private fun handleError(exception: Throwable) {

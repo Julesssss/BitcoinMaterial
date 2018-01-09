@@ -5,5 +5,7 @@
     <color name="colorPrimaryDark">#512DA8</color>
     <color name="colorPrimaryDarker">#311B92</color>
     <color name="colorAccent">#B388FF</color>
+    <color name="colorGraphDark">#5E35B1</color>
+    <color name="whiteFaded">#87ffffff</color>
 
 </resources>
